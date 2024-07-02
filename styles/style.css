@@ -48,6 +48,7 @@ ol {
     padding: 0px;
     gap: 30px;
     width: 1140px;
+    padding-bottom: 8px;
 }
 
 .search-form {
@@ -74,7 +75,7 @@ ol {
     position: relative;
     width: 711px;
     height: 386px;
-    margin-bottom: 22px;
+    margin-bottom: 16px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -130,6 +131,8 @@ ol {
     /* identical to box height */
     color: #ffffff;
     border: none;
+    margin-bottom: 6px;
+    padding-left: 2px;
 }
 
 .title {
@@ -193,7 +196,7 @@ ol {
     flex-direction: column;
     align-items: flex-start;
     padding: 0px;
-    gap: 5px;
+
 }
 
 .search-form__label {
@@ -224,7 +227,7 @@ ol {
     /* identical to box height */
     width: 100%;
     height: 22px;
-   
+    color: inherit;
     border: none;
     background: inherit;
     border-top: 1px solid #fff;
@@ -255,6 +258,12 @@ ol {
     width: 212px;
     height: 22px;
     gap: 15px;
+    color: #FFFFFF;
+    padding-left: 8px;
+}
+
+.search-form__label:hover {
+    text-decoration: underline;
 }
 
 .search-form__pseudo-checkbox {
@@ -290,7 +299,7 @@ ol {
     color: #ffffff;
     background: transparent;
 
-    border: 1px solid #ffffff;
+    border: 1px solid #ffffff;/* Внутренняя граница */
 }
 
 .search-form__submit-button {
@@ -321,26 +330,33 @@ ol {
     text-decoration: underline;
 }
 
-.button-effect:focus {
-    outline: none;
+
+/*фокус если навигация через мышь, по умолчанию не активна*/
+.button:focus {
+    /*outline: none;*/
+    outline: 1px solid #fff;
+    outline-offset: 1px;
   }
 
-  .button-effect:focus-visible {
+
+/*фокус если навигация через Tab*/
+.button:focus-visible {
     outline: 1px solid #fff;
     outline-offset: 1px;
   }
 
 .search-form__label-text {
     padding-left: 5px;
+    color: #FFFFFF;
 }
 
 .search-form__label:has(:focus-visible) {
     
     outline: #ffffff solid 1px;
-    outline-offset: 1px;
+    outline-offset: 2px;
 }
 
-.search-form__checkbox:checked + .search-form__pseudo-checkbox::before {
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
     content: "";
     display: block;
     width: 15px;
